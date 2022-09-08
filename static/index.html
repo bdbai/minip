@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Demo page</title>
+
+<h1>Welcome!</h1>
+<p id="visitor-count"></p>
+<iframe width="854" height="480" src="video.mp4"></iframe>
+
+<script type="application/javascript">
+    ;(async () => {
+        const res = await fetch('visitor_count')
+        const count = await res.text()
+        document.getElementById('visitor-count').innerText = `${count} users have visited this website.`
+    })()
+</script>
